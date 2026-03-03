@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0f1724"/>
+      <stop offset="100%" stop-color="#060a10"/>
+    </radialGradient>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#00e5ff"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sg">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="50" cy="50" r="48" fill="url(#bg)"/>
+
+  <!-- Outer border -->
+  <circle cx="50" cy="50" r="47.5" fill="none" stroke="url(#g1)" stroke-width="1.2"/>
+
+  <!-- Dashed orbit ring -->
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#00e5ff"
+          stroke-width="0.5" stroke-opacity="0.25" stroke-dasharray="2.5 3.5"/>
+
+  <!-- Mid ring -->
+  <circle cx="50" cy="50" r="39" fill="none" stroke="url(#g1)"
+          stroke-width="0.6" stroke-opacity="0.4"/>
+
+  <!-- Inner dashed ring -->
+  <circle cx="50" cy="50" r="33" fill="none" stroke="#a855f7"
+          stroke-width="0.4" stroke-opacity="0.35" stroke-dasharray="4 5"/>
+
+  <!-- Crosshair -->
+  <line x1="50" y1="6"  x2="50" y2="94" stroke="#00e5ff" stroke-width="0.3" stroke-opacity="0.12"/>
+  <line x1="6"  y1="50" x2="94" y2="50" stroke="#00e5ff" stroke-width="0.3" stroke-opacity="0.12"/>
+
+  <!-- Letter H with glow -->
+  <g filter="url(#glow)">
+    <rect x="27" y="27" width="8"  height="46" rx="2" fill="url(#g1)"/>
+    <rect x="65" y="27" width="8"  height="46" rx="2" fill="url(#g2)"/>
+    <rect x="27" y="43.5" width="46" height="8" rx="2" fill="url(#g1)"/>
+  </g>
+
+  <!-- N/S/E/W tick marks -->
+  <rect x="48.5" y="2"  width="3" height="7" rx="1" fill="#00e5ff" opacity="0.7"/>
+  <rect x="48.5" y="91" width="3" height="7" rx="1" fill="#a855f7" opacity="0.7"/>
+  <rect x="2"  y="48.5" width="7" height="3" rx="1" fill="#00e5ff" opacity="0.7"/>
+  <rect x="91" y="48.5" width="7" height="3" rx="1" fill="#a855f7" opacity="0.7"/>
+
+  <!-- Accent dots -->
+  <circle cx="50" cy="11" r="1.5" fill="#00e5ff" opacity="0.9" filter="url(#sg)"/>
+  <circle cx="50" cy="89" r="1.5" fill="#a855f7" opacity="0.9"/>
+  <circle cx="11" cy="50" r="1.5" fill="#00e5ff" opacity="0.7"/>
+  <circle cx="89" cy="50" r="1.5" fill="#a855f7" opacity="0.7"/>
+  <circle cx="27" cy="27" r="1.2" fill="#00e5ff" opacity="0.5"/>
+  <circle cx="73" cy="27" r="1.2" fill="#a855f7" opacity="0.5"/>
+  <circle cx="27" cy="73" r="1.2" fill="#a855f7" opacity="0.5"/>
+  <circle cx="73" cy="73" r="1.2" fill="#00e5ff" opacity="0.5"/>
+</svg>
